@@ -454,6 +454,8 @@ def clip_coords(coords, img_shape):
 	coords[:, 3].clamp_(0, img_shape[0])  # y2
 	return coords
 ```
+![Proto-01](https://github.com/has-bi/Plastic-Waste-Detection-YOLOv5/assets/117572919/9b5978ea-5bb6-43ad-8e60-cb69de3422b0)![Proto-04](https://github.com/has-bi/Plastic-Waste-Detection-YOLOv5/assets/117572919/f0dc432b-c79a-468a-826e-729f72197e22)
+
 
 ## The Result of Detection
 
