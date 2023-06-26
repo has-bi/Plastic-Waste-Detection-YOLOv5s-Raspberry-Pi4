@@ -15,11 +15,14 @@ You can find the documentation of YOLOv5 in here : https://github.com/ultralytic
  
 # Dataset Preparation
 The "Plastic Waste Detection using YOLOv5s on Raspberry Pi 4B" project utilizes a custom dataset consisting of 6000 images. These images were captured to encompass various types of plastic waste commonly found in the environment, including plastic bottles, plastic bags, plastic cups, cables, soap bottles, and styrofoam.
-![Dataset-01](https://github.com/has-bi/Plastic-Waste-Detection-YOLOv5/assets/117572919/7a6f6584-e03b-46ab-b5e9-480218b84498)
+![Dataset-01](https://github.com/has-bi/Plastic-Waste-Detection-YOLOv5s-Raspberry-Pi4/assets/117572919/9a147cfc-ac14-4545-9663-c8ede095e4fa)
+
 To train the YOLOv5s model effectively, the dataset was annotated using the Roboflow platform. Roboflow provides a user-friendly interface and annotation tools that facilitate the annotation process, saving time and effort.
+![image](https://github.com/has-bi/Plastic-Waste-Detection-YOLOv5s-Raspberry-Pi4/assets/117572919/82bf27d2-4ea2-43ad-97a1-ed7003a5b5d8)
+
 
 The annotations include bounding boxes that specify the location and size of each plastic waste object within the images. These annotations are crucial for training the model to accurately detect and classify plastic waste objects.
-![image](https://github.com/has-bi/Plastic-Waste-Detection-YOLOv5/assets/117572919/4f53133b-268e-4948-b2bf-eb19e1123944)
+
 
 # Model Training
 The "Plastic Waste Detection using YOLOv5s on Raspberry Pi 4B" model has been trained using the YOLOv5s architecture implemented with the PyTorch framework. The choice of YOLOv5s is based on a balance between model accuracy and size, making it suitable for deployment on resource-constrained devices like the Raspberry Pi.
@@ -66,6 +69,9 @@ During training, the model learns to identify various plastic waste objects by a
 ```
 !python train.py --img 416 --batch 16 --epochs 200 --data {dataset.location}/data.yaml --weights yolov5s.pt --cache
 ```
+![Epoch](https://github.com/has-bi/Plastic-Waste-Detection-YOLOv5s-Raspberry-Pi4/assets/117572919/34e6282c-8404-4d81-8c21-f29dc8c48649)
+
+
 
 4. **Model Evaluation**
 
@@ -93,8 +99,10 @@ The "Plastic Waste Detection using YOLOv5s on Raspberry Pi 4B" project includes 
 
 **5. Bin with Partitions:** The bin in the prototype setup is divided into four partitions, representing different waste categories: PET, HDPE, PP, and Non-recyclable waste. These partitions facilitate the separation of waste based on its detected category.
 
-![Proto-02](https://github.com/has-bi/Plastic-Waste-Detection-YOLOv5/assets/117572919/62b21e5d-14af-419d-9875-f93fd3a47a47)
-![Proto-03](https://github.com/has-bi/Plastic-Waste-Detection-YOLOv5/assets/117572919/cb039098-bf59-4632-9764-5daf3dccb33c)
+![Proto-02](https://github.com/has-bi/Plastic-Waste-Detection-YOLOv5s-Raspberry-Pi4/assets/117572919/2e6485e7-63bf-43f2-9e82-0ae990ee1c16)
+
+![Proto-03](https://github.com/has-bi/Plastic-Waste-Detection-YOLOv5s-Raspberry-Pi4/assets/117572919/5422ee61-45f3-4b48-82d7-f2b18f8da8bc)
+
 
 ## Raspberry Pi4
 I am using Ubuntu for the OS of Raspberry Pi, you can follow the step by step from this documentation : https://github.com/weirros/yolov5_wi_pi4 and https://jordan-johnston271.medium.com/tutorial-running-yolov5-machine-learning-detection-on-a-raspberry-pi-4-3938add0f719
@@ -454,7 +462,9 @@ def clip_coords(coords, img_shape):
 	coords[:, 3].clamp_(0, img_shape[0])  # y2
 	return coords
 ```
-![Proto-01](https://github.com/has-bi/Plastic-Waste-Detection-YOLOv5/assets/117572919/9b5978ea-5bb6-43ad-8e60-cb69de3422b0)![Proto-04](https://github.com/has-bi/Plastic-Waste-Detection-YOLOv5/assets/117572919/f0dc432b-c79a-468a-826e-729f72197e22)
+![Proto-01](https://github.com/has-bi/Plastic-Waste-Detection-YOLOv5s-Raspberry-Pi4/assets/117572919/a2922ff8-55fb-4201-af80-42c92b6861b6)
+![Proto-04](https://github.com/has-bi/Plastic-Waste-Detection-YOLOv5s-Raspberry-Pi4/assets/117572919/5f080f62-a81b-4f0b-8d58-1c9ed4864a0a)
+
 
 
 ## The Result of Detection
@@ -468,18 +478,27 @@ Performance Metrics:
 - Recall: 0.9993
 - F1 Score: 0.9994
 
+![Precision](https://github.com/has-bi/Plastic-Waste-Detection-YOLOv5s-Raspberry-Pi4/assets/117572919/448654ea-7c99-45d4-b724-e01bd91511a9)
+![Recall](https://github.com/has-bi/Plastic-Waste-Detection-YOLOv5s-Raspberry-Pi4/assets/117572919/3cddf19f-e86c-40c7-99e2-297de3c4c856)
+![mAP_0 95](https://github.com/has-bi/Plastic-Waste-Detection-YOLOv5s-Raspberry-Pi4/assets/117572919/902c3208-8fb6-4c9a-bd1a-4a3bd0c7aac0)
+
+
 In addition to the high accuracy and precision, the average computation time for processing each frame was measured to be 6.594 seconds. This computation time indicates the duration required for the model to analyze and detect objects within a single frame.
 
 Please note that the actual computation time may vary depending on factors such as the complexity of the scene, the number of objects present, and the specific hardware configuration. It's recommended to optimize these parameters and consider the specific requirements of your application to achieve the best performance.
 
 With these remarkable performance metrics and efficient computation time, YOLOv5 on Raspberry Pi 4 proves to be a powerful and reliable solution for real-time object detection tasks, enabling various applications in fields such as surveillance, robotics, and smart environments.
 
+![mAP_0 95](https://github.com/has-bi/Plastic-Waste-Detection-YOLOv5s-Raspberry-Pi4/assets/117572919/b5d39a23-5505-40f0-9aca-fe5d10667c88)
 
-![Screenshot from 2023-06-22 10-43-20](https://github.com/has-bi/Plastic-Waste-Detection-YOLOv5/assets/117572919/5fdcba94-d3b4-4b74-a928-65cb6303d21b)
-![Screenshot from 2023-06-22 10-53-37](https://github.com/has-bi/Plastic-Waste-Detection-YOLOv5/assets/117572919/a983f2c0-5680-4a99-8272-72a0174ebcc4)
+![Precision](https://github.com/has-bi/Plastic-Waste-Detection-YOLOv5s-Raspberry-Pi4/assets/117572919/f185b869-cea2-4a6c-8d7d-28003fb8f742)
+![Recall](https://github.com/has-bi/Plastic-Waste-Detection-YOLOv5s-Raspberry-Pi4/assets/117572919/6a1b116a-3647-46be-9a58-0948ad0d3693)
+![F1_curve](https://github.com/has-bi/Plastic-Waste-Detection-YOLOv5s-Raspberry-Pi4/assets/117572919/b876f061-d364-433d-95e3-dc8330c2fb23)
 
-![WhatsApp Image 2023-06-23 at 14 18 29](https://github.com/has-bi/Plastic-Waste-Detection-YOLOv5/assets/117572919/826e77ae-a661-45a2-9fa5-afe85e3c9df3)
-![WhatsApp Image 2023-06-23 at 14 18 20](https://github.com/has-bi/Plastic-Waste-Detection-YOLOv5/assets/117572919/f64f9601-18eb-47d6-9eb9-b246eff97cde)
+
+![WhatsApp Image 2023-06-23 at 14 18 29](https://github.com/has-bi/Plastic-Waste-Detection-YOLOv5s-Raspberry-Pi4/assets/117572919/7d18e1e6-0fec-454d-a311-8b5ed0a2eb7b)
+![WhatsApp Image 2023-06-23 at 14 18 20](https://github.com/has-bi/Plastic-Waste-Detection-YOLOv5s-Raspberry-Pi4/assets/117572919/ec82732f-19cf-48e6-a8ee-5ddb34876b38)
+
 
 ## Reference :
 https://github.com/ultralytics/yolov5
