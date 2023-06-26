@@ -490,3 +490,4 @@ https://jordan-johnston271.medium.com/tutorial-running-yolov5-machine-learning-d
 
 https://pub.towardsai.net/yolov5-m-implementation-from-scratch-with-pytorch-c8f84a66c98b
 
+https://github.com/the-raspberry-pi-guy/lcd
