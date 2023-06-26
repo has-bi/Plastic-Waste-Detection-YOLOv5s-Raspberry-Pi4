@@ -66,6 +66,8 @@ During training, the model learns to identify various plastic waste objects by a
 ```
 !python train.py --img 416 --batch 16 --epochs 200 --data {dataset.location}/data.yaml --weights yolov5s.pt --cache
 ```
+![Epoch](https://github.com/has-bi/Plastic-Waste-Detection-YOLOv5s-Raspberry-Pi4/assets/117572919/89ae1099-8276-4d48-8d04-c40ce9a1403b)
+
 
 4. **Model Evaluation**
 
@@ -467,6 +469,11 @@ Performance Metrics:
 - Precision: 0.9995
 - Recall: 0.9993
 - F1 Score: 0.9994
+
+![Precision](https://github.com/has-bi/Plastic-Waste-Detection-YOLOv5s-Raspberry-Pi4/assets/117572919/448654ea-7c99-45d4-b724-e01bd91511a9)
+![Recall](https://github.com/has-bi/Plastic-Waste-Detection-YOLOv5s-Raspberry-Pi4/assets/117572919/3cddf19f-e86c-40c7-99e2-297de3c4c856)
+![mAP_0 95](https://github.com/has-bi/Plastic-Waste-Detection-YOLOv5s-Raspberry-Pi4/assets/117572919/902c3208-8fb6-4c9a-bd1a-4a3bd0c7aac0)
+
 
 In addition to the high accuracy and precision, the average computation time for processing each frame was measured to be 6.594 seconds. This computation time indicates the duration required for the model to analyze and detect objects within a single frame.
 
