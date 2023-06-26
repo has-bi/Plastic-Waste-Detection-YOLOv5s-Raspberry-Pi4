@@ -1,0 +1,17 @@
+names:
+- cable
+- plastic bag
+- plastic bottle
+- plastic cup
+- soap bottle
+- sterofoam
+nc: 6
+roboflow:
+  license: CC BY 4.0
+  project: plastic-waste-detection-x8dvc
+  url: https://universe.roboflow.com/brawijaya-university-fyh8y/plastic-waste-detection-x8dvc/dataset/2
+  version: 2
+  workspace: brawijaya-university-fyh8y
+test: ../test/images
+train: /content/datasets/Plastic-Waste-Detection-2/train/images
+val: /content/datasets/Plastic-Waste-Detection-2/valid/images
